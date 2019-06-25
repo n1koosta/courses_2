@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		nav {
+			height: 50px;
+		}
+
+		#testdiv {
+			transition: 1s;
+		}
+
+		.green {
+			background-color: green;
+		}
+
+		.orange {
+			background-color: orange;
+		}
+
+		.big {
+			border: 2px solid black;
+		}
+
+		.divs {
+			height: 50px;
+		}
+
+
+		.hide {
+			height: 0;
+		}
+
+	</style>
+</head>
+<body>
+
+<nav>
+	
+</nav>
+
+<div id="testdiv" class="divs"></div>
+
+<button id="plus">+ height</button>
+
+
+<script type="text/javascript">
+
+var nav = document.querySelector("nav");
+var btn = document.getElementById("plus");
+var div = document.getElementById("testdiv");
+
+/// 1st way of style binding
+
+// nav.style.backgroundColor = "green";
+// nav.style.height = "100px";
+
+//nav.style.backgroundColor = "";
+
+var navH = 100;
+btn.onclick = function(){
+	navH += 10;
+	nav.style.height = navH + "px";
+
+	div.classList.toggle("hide");
+}
+
+nav.style.cssText = "background-color: teal; height: " + navH + "px; border: 1px solid black;";
+
+/// 2nd way
+
+// div.className = "green big";
+// div.className = "orange big";
+
+/// 3rd way
+
+div.classList.add("green");
+div.classList.add("big");
+//div.classList.remove("big");
+
+console.log( div.classList.contains("big") );
+//div.classList.toggle("hide");
+
+
+
+
+
+
+</script>
+
+
+
+</body>
+
+
+</html>
